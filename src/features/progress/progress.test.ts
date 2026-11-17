@@ -1,0 +1,2 @@
+import {beforeEach,describe,expect,it} from 'vitest';import {addPractice,loadProgress,titleForXp} from './progress';
+describe('progress',()=>{beforeEach(()=>localStorage.clear());it('persists earned practice',()=>{addPractice({oracleCount:1,meditationMinutes:5},25);expect(loadProgress()).toMatchObject({xp:25,oracleCount:1,meditationMinutes:5})});it('returns bilingual titles',()=>{expect(titleForXp(0,true)).toBe('初入道门');expect(titleForXp(1000,false)).toBe('Tai Chi Master')})});

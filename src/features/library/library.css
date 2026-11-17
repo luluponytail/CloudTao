@@ -1,0 +1,6 @@
+.library-book-cta{margin:18px 0;padding:14px;background:linear-gradient(135deg,#e9dec7,#d9c8a7);border:1px solid #c8a46a;box-shadow:0 8px 22px #202d2a16}
+.library-book-cta> b{display:block;margin:2px 0 10px;color:#765b2f;font-size:15px}
+.library-book-arrow{display:grid;width:34px;height:34px;margin:-31px auto 7px;border-radius:50%;place-items:center;background:#24483f;color:#d9b66f;border:1px solid #c8a46a;animation:libraryArrow 1.6s ease-in-out infinite}
+.library-book-cta .amazon-book-link{margin:0;box-shadow:4px 5px 0 #c8a46a44;transition:transform .2s,box-shadow .2s}
+.library-book-cta .amazon-book-link:hover,.library-book-cta .amazon-book-link:focus-visible{transform:translateY(-2px);box-shadow:4px 8px 0 #c8a46a55}
+@keyframes libraryArrow{50%{transform:translateY(4px)}}

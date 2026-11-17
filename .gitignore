@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+
+# Production and test output
+dist/
+coverage/
+
+# Local temporary files
+tmp/
+temp/
+*.tmp
+*.log
+
+# TypeScript / Vite generated files
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Editor and operating-system metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local browser/test artifacts
+playwright-report/
+test-results/
+screenshots/
+
+# Unused local art iterations (production uses cloud-tao-main-map-v4.webp)
+public/assets/maps/*candidate*.png
+public/assets/maps/lamp-edit-*.png
+public/assets/maps/cloud-tao-main-map.webp
+public/assets/maps/cloud-tao-main-map-v2.webp
+public/assets/maps/cloud-tao-main-map-v3.webp

@@ -1,0 +1,25 @@
+.incense-support-button {
+  display: flex;
+  width: min(100%, 528px);
+  min-height: 64px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background: #24483f;
+  color: #f1ebdd;
+  text-decoration: none;
+  font-size: 18px;
+  box-shadow: 6px 7px 0 #d9caa8;
+}
+
+.incense-support-button:hover,
+.incense-support-button:focus-visible {
+  background: #315b50;
+  border-color: #d9b66f;
+  transform: translateY(-1px);
+}
+
+.incense-support-button.offered {
+  background: #315b50;
+  color: #f1ebdd;
+}

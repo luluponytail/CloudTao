@@ -1,0 +1,2 @@
+import {Component,type ErrorInfo,type ReactNode} from 'react';
+export class ErrorBoundary extends Component<{children:ReactNode},{failed:boolean}>{state={failed:false};static getDerivedStateFromError(){return{failed:true}}componentDidCatch(error:Error,info:ErrorInfo){console.error('Cloud Tao UI error',error,info)}render(){if(this.state.failed)return <main className="fatal"><div><b>☯</b><h1>山中暂起云雾</h1><p>The path is briefly hidden by cloud.</p><button onClick={()=>location.reload()}>重新进入 · Try again</button></div></main>;return this.props.children}}

@@ -2,7 +2,6 @@ import {useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {gameEvents} from '../../game/events';
 import {loadProgress,saveProgress} from '../progress/progress';
-import {AmazonBookLink} from '../support/SupportPanel';
 import './wealth.css';
 
 const intentions=[
@@ -29,6 +28,5 @@ export function WealthPanel(){
     <small className="wealth-support-note">{zh?'敬香祝愿是一种文化体验，不代表任何财务收益承诺。':'The incense blessing is a cultural reflection and does not promise financial results.'}</small>
     {offered&&<div className="wealth-blessing" role="status"><b>✦ {zh?'财神赐语':'A word for prosperity'}</b><p>{zh?'财由勤聚，福以德生。守正而行，量入为出，所得方能长久。':'Prosperity grows through steady effort and integrity. Act fairly, live within your means, and let what you gain endure.'}</p><small>+8 XP · {zh?'每日首次敬香奖励':'first offering reward each day'}</small></div>}
     <button className={`primary-button wealth-incense ${offered?'offered':''}`} onClick={offer}>{offered?(zh?'今日已敬香':'Incense offered today'):(zh?`敬香 · ${intentions[intention][0]}`:`Offer incense · ${intentions[intention][1]}`)}</button>
-    <AmazonBookLink compact/>
   </div>;
 }

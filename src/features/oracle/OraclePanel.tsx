@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { drawHexagram, type Hexagram } from '../../data/hexagrams/hexagrams';
 import { addPractice } from '../progress/progress';
 import { ShareActions } from '../sharing/ShareActions';
-import {AmazonBookLink} from '../support/SupportPanel';
 
 type OraclePanelProps = { autoDrawKey?: number };
 type GuidanceKey = keyof Hexagram['guidance'];
@@ -104,7 +103,6 @@ export function OraclePanel({ autoDrawKey }: OraclePanelProps) {
       <small>{zh ? `依据第 ${result.number} 卦「${result.zh}」生成中文卦象启示。` : `Quoted from The I Ching Book of Answers, page ${result.bookPage}.`}</small>
       <small>{zh ? '传统文化与哲学反思体验，不用于预测未来。' : 'A cultural reflection experience, not a prediction of the future.'}</small>
       <ShareActions title={`${result.symbol} ${zh ? result.zh : result.en}`} detail={zh ? result.reflectionZh : result.reflectionEn} />
-      <div className="oracle-aftercare"><AmazonBookLink compact/></div>
     </article>}
   </div>;
 }

@@ -149,9 +149,9 @@ export class InteriorScene extends Phaser.Scene{
 
   private createLibraryBookHotspot(){
     const zh=(localStorage.getItem('i18nextLng')||navigator.language).startsWith('zh');
-    // Bind the Amazon link to the real stack of books on the left step. The
-    // previous synthetic book in the centre competed with the background art.
-    const x=205,y=258;
+    // Bind the Amazon link to the real stack of books beside the desk, rather
+    // than the ladder/empty shelf on the far left.
+    const x=320,y=258;
     const glow=this.add.ellipse(x,y,86,48,0xf4d889,.13).setStrokeStyle(2,0xf4d889,.72).setDepth(11);
     const hint=this.add.text(x,y+42,zh?'点击典籍 · 查看本书':'CLICK THE BOOK · VIEW ON AMAZON',{fontFamily:'serif',fontSize:zh?'13px':'11px',color:'#f4d889',backgroundColor:'#202d2acc',padding:{x:10,y:6}}).setOrigin(.5).setDepth(30);
     const zone=this.add.zone(x,y,105,76).setInteractive({useHandCursor:true}).setDepth(20);

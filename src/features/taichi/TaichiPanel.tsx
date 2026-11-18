@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { forms } from '../../data/taichi/forms';
 import { addPractice } from '../progress/progress';
 import { ShareActions } from '../sharing/ShareActions';
-import {AmazonBookLink} from '../support/SupportPanel';
 
 const phaseCues=[
  [['松肩沉胯','双臂前举','屈膝下按'],['Settle shoulders','Raise both arms','Sink and press']],
@@ -37,6 +36,5 @@ export function TaichiPanel(){
   <div className="progress-bar"><i style={{width:`${((index*3+phase+1)/(forms.length*3))*100}%`}}/></div>
   <div className="feature-actions"><button onClick={()=>select(index-1)}>‹</button><button className="primary-button" onClick={()=>setPlaying(!playing)}>{playing?(zh?'暂停':'Pause'):(zh?'开始跟练':'Follow')}</button><button onClick={()=>select(index+1)}>›</button><select value={speed} onChange={e=>setSpeed(Number(e.target.value))}><option value=".5">0.5×</option><option value=".75">0.75×</option><option value="1">1×</option></select></div>
   {completed&&<><p className="completion">✦ {zh?'完成六式关键姿势跟练，获得 30 经验。':'Six-form key-posture practice complete. 30 XP earned.'}</p><ShareActions title={zh?'今日太极修行':'Today’s Tai Chi Practice'} detail={zh?'完成六式太极入门练习':'Completed the six-form introductory practice'}/></>}
-  <div className="taichi-support"><AmazonBookLink compact/></div>
  </div>
 }

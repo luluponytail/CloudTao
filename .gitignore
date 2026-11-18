@@ -3,6 +3,7 @@ node_modules/
 
 # Production and test output
 dist/
+cloudflare-dist/
 coverage/
 
 # Local temporary files

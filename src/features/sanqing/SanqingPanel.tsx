@@ -1,7 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { completeSanqing, loadSanqingState, localDateKey, saveSanqingState, todayRecord, type DeityId } from './sanqing';
-import {supportConfig} from '../../config/support';
 import '../../styles/sanqing-support.css';
 
 const DEITIES: Array<{id:DeityId; zh:string; en:string; toolZh:string; toolEn:string; meaningZh:string; meaningEn:string}> = [
@@ -56,9 +55,9 @@ export function SanqingPanel(){
       </button>)}
     </div>
     {message&&<div className="deity-teaching" role="status">{message}</div>}
-    <a className={`incense-button incense-support-button ${incense?'offered':''}`} href={supportConfig.paypalUrl} target="_blank" rel="noopener noreferrer" onClick={()=>{setIncense(true);savePartial(observed,true)}}>
-      <span className="incense-smoke">〰</span>{incense?(zh?'再次上香并支持云上道观':'Offer incense & support again'):(zh?'上香并支持云上道观':'Offer incense & support Cloud Tao')}
-    </a>
+    <button className={`incense-button incense-support-button ${incense?'offered':''}`} onClick={()=>{setIncense(true);savePartial(observed,true)}}>
+      <span className="incense-smoke">〰</span>{incense?(zh?'今日已上香':'Incense offered today'):(zh?'上香':'Offer incense')}
+    </button>
     {allObserved?<section className="reflection-scroll">
       <h3>{zh?'今日省思':'Today’s reflection'}</h3>
       <div className="reflection-questions">{QUESTIONS.map(([cn,en])=><button key={cn} className={question===(zh?cn:en)?'active':''} onClick={()=>setQuestion(zh?cn:en)}>{zh?cn:en}</button>)}</div>

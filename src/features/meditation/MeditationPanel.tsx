@@ -1,7 +1,7 @@
 import {useEffect,useRef,useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {addPractice} from '../progress/progress';
-import {AmazonBookLink,SupportPanel} from '../support/SupportPanel';
+import {AmazonBookLink} from '../support/SupportPanel';
 
 type BreathPhase='inhale'|'hold'|'exhale';
 
@@ -39,6 +39,6 @@ export function MeditationPanel(){
   <p className="breath-instruction">{zh?'吸气 4 秒 · 屏息 2 秒 · 呼气 6 秒':'Inhale 4 sec · hold 2 sec · exhale 6 sec'}</p>
   <div className="feature-actions"><button className="primary-button" onClick={()=>setRunning(!running)} disabled={done}>{running?(zh?'暂停':'Pause'):(zh?'开始静坐':'Begin')}</button><button onClick={reset}>{zh?'重置':'Reset'}</button></div>
   {done&&<p className="completion">✓ {zh?`完成 ${minutes} 分钟静坐，获得 ${minutes*5} 经验。`:`${minutes} minutes complete. ${minutes*5} XP earned.`}</p>}
-  <div className="meditation-support"><SupportPanel context="meditation"/><AmazonBookLink compact/></div>
+  <div className="meditation-support"><AmazonBookLink compact/></div>
  </div>;
 }
